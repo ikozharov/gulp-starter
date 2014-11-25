@@ -1,22 +1,30 @@
 {
-  "name": "browserify-test",
+  "name": "gulp-starter",
   "version": "0.0.1",
   "author": "Igor Kozharov",
   "private": true,
-  "description": "Project for testing browserify",
+  "description": "Gulp Starter Project",
   "dependencies": {
-    "underscore": "^1.7.0"
+    "underscore" : "^1.7.0",
+    "react"      : "~0.12.1",
+    "jquery"     : "^2.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ikozharov/gulp-starter.git"
   },
   "browserify-shim": {
     "plugin": {
       "exports": "plugin",
       "depends": [
-        "jquery:$"
       ]
     }
   },
   "browserify": {
-    "transform": ["coffeeify"]
+    "transform": [
+      ["coffeeify"],
+      ["reactify", { "es6": true }]
+    ]
   },
   "devDependencies": {
     "browserify": "latest",
@@ -32,6 +40,7 @@
     "gulp-imagemin": "^2.0.0",
     "gulp-ruby-sass": "^0.7.1",
     "require-dir": "^0.1.0",
-    "pretty-hrtime": "^0.2.1"
+    "pretty-hrtime": "^0.2.1",
+    "reactify": "~0.17.1"
   }
 }
